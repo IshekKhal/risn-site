@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risn — Study Timer</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #F8F8F6;
+    --surface: #FFFFFF;
+    --ink: #111111;
+    --ink-faded: #666666;
+    --ink-muted: #AAAAAA;
+    --divider: #E8E8E8;
+    --sand: #C8853A;
+  }
+
+  body {
+    font-family: -apple-system, 'DM Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--divider);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .nav-logo {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-logo span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sand);
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--ink-faded);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .hero {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: var(--ink-faded);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .cta-btn:hover { opacity: 0.85; }
+
+  .cta-sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .features {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--bg);
+    border: 1px solid var(--divider);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .feature-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    color: var(--ink-faded);
+    line-height: 1.6;
+  }
+
+  footer {
+    border-top: 1px solid var(--divider);
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer p { font-size: 13px; color: var(--ink-muted); }
+
+  footer nav { border: none; padding: 0; position: static; background: transparent; }
+
+  footer .nav-links a { font-size: 13px; }
+
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .hero { padding: 60px 24px 60px; }
+    .features { padding: 40px 20px; }
+    footer { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span></span>Risn</a>
+  <ul class="nav-links">
+    <li><a href="/support">Support</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">Available on iPhone</p>
+  <h1>Lock in.<br>Watch it rise.</h1>
+  <p>Risn turns your study sessions into a rising hourglass. Every second you're focused, the sand climbs. Complete sessions, build streaks, block distractions.</p>
+  <a href="#" class="cta-btn">Download on the App Store</a>
+  <span class="cta-sub">$9.99 · One-time purchase · No subscription</span>
+</section>
+
+<section class="features">
+  <div class="feature-card">
+    <div class="feature-icon">⏳</div>
+    <h3>Sand rises as you study</h3>
+    <p>Not a countdown. Every second of focused work fills the hourglass upward. Complete a session and watch it flip.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🛡</div>
+    <h3>Block distracting apps</h3>
+    <p>Select apps to block during sessions using Apple's Screen Time. They unlock the moment you're done.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">📊</div>
+    <h3>Track by subject</h3>
+    <p>See exactly how many hours you've put into each subject today, this week, and all time. Build consecutive day streaks.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🔒</div>
+    <h3>Your data stays on device</h3>
+    <p>No accounts, no servers, no subscriptions. Everything is stored locally on your iPhone. Delete the app, delete the data.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Risn. All rights reserved.</p>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/support">Support</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>
